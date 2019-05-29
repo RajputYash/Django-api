@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>user</title>
+</head>
+<body>
+    <form method="post">
+        {% csrf_token %}
+        <h1>FirstName</h1>{{form.first_name}}
+        <h1>LastName</h1>{{form.last_name}}
+        <h1>CompanyName</h1>{{form.company_name}}
+        <h1>Age</h1>{{form.age}}
+        <h1>City</h1>{{form.city}}
+        <h1>State</h1>{{form.state}}
+        <h1>Zip</h1>{{form.zip}}
+        <h1>Email</h1>{{form.email}}
+        <h1>Web</h1>{{form.web}}
+
+        <button type="submit" value="Submit"> Submit </button>
+    </form>
+    {% if data %}
+        <a href="{% url 'delete' user_data.id %}">delete</a>
+    {% endif %}
+
+</body>
+</html>

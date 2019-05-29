@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>list</title>
+</head>
+<body>
+    <ul>
+        {% for d in data %}
+            <a href="{% url 'update' d.id%}"></a>
+            <li>{{d.first_name}}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'create'%}">create new user</a>
+</body>
+</html>
